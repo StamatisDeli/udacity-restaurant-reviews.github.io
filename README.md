@@ -31,7 +31,7 @@ This is a diary of the steps I took to complete this project.
 
 1. First day: I am trying to find my way around the code I was given. 
 
-    a. The maps not displaying, I have to fix that. David Lower provided a link so I can get a Google Maps API number, and it worked. The maps are fixed.
+    The maps not displaying, I have to fix that. David Lower provided a link so I can get a Google Maps API number, and it worked. The maps are fixed.
 
 2. Changes are not updating on the browser.
         I just have to press shift-refresh, and it's there. it's because of the browser cache. Other solution is start the server in incognito mode.
@@ -42,10 +42,17 @@ This is a diary of the steps I took to complete this project.
     Done!
     
 5. Must fix focus for tab. I thing it must go from header to the filters. Tab-index maybe?
-I am still strying to skip the tabindex of the map, but tabindex="-1" doesn't do the trick...! I think the tab attribute can be removed with some code, but it looks like an overkill. Furthermore, the problem is that setting the tabindex manually 1:header, 2: dropdown menu....etc doesn't work either, 'cause the tab goes back to the maps (edited)
+I am still strying to skip the tabindex of the map, but tabindex="-1" doesn't do the trick...! I think the tab attribute can be removed with some code, but it looks like an overkill. Furthermore, the problem is that setting the tabindex manually 1:header, 2: dropdown menu....etc doesn't work either, 'cause the tab goes back to the maps (edited). Mohammed Riaad told me that G.M. can't be tempered with, so I won't be trying anymore. 
 
-6. Must implement aria attributes.
+6. Must implement aria attributes. Note sure yet. I did some semantics.
 
 7. Implement meta data for responsive UX
     Done!
+    
+8. Implement Service Worker:   
+        I found a solution online, I will try that. https://www.youtube.com/watch?v=BfL3pprhnms
+        It works offline.
 
+##Acknowledgements
+
+For this project I want to thank the community for their support as always, special mentions to David Lower and Mohammed Riaad. A thank you to the girl on the You Tube video for a very good solution, which helped very much my understanding of Service Workers.
