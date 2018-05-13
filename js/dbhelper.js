@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 80 // Change this to your server port // TODO: Set to 80 so that it works in github
-    return `/data/restaurants.json`;
+    return `https://github.com/StamatisDeli/udacity-restaurant-reviews.github.io/blob/master/data/restaurants.json `;
   }
 
   /**
