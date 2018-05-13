@@ -24,8 +24,11 @@ In a terminal, check the version of Python you have: `python -V`. If you have Py
 
 Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
 
+## How to access the app
 
-##Journal
+Download this repo, follow instrunctions as described in "What do I do from here?". Enjoy
+
+## Journal
 
 This is a diary of the steps I took to complete this project.
 
@@ -53,6 +56,6 @@ I am still strying to skip the tabindex of the map, but tabindex="-1" doesn't do
         I found a solution online, I will try that. https://www.youtube.com/watch?v=BfL3pprhnms
         It works offline.
 
-##Acknowledgements
+## Acknowledgements
 
-For this project I want to thank the community for their support as always, special mentions to David Lower and Mohammed Riaad. A thank you to the girl on the You Tube video for a very good solution, which helped very much my understanding of Service Workers.
+For this project I want to thank the community for their support as always, special mentions to David Lower and Mohammed Riaad. A thank you to the girl on the You Tube "bitsofcode" video for a very good solution, which helped very much my understanding of Service Workers.
