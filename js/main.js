@@ -141,7 +141,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = "A photo of "+restaurant.name+" restaurant";//implementing for custom name
+  image.alt = "A photo of " + restaurant.name +" restaurant: "+ restaurant.altText;//implementing for custom name
   li.append(image);
 
   const name = document.createElement('h1');
@@ -181,6 +181,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 /*
 * Check for Service Worker
 */
+/*
+//Old version
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
   .register("/service-worker.js") //link to the actual service worker
@@ -190,4 +192,17 @@ if ("serviceWorker" in navigator) {
   .catch(function(error){
     console.log("Service Worker Failed", error);//if failed, print something
   })
+}
+*/
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register("/service-worker.js").then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
 }

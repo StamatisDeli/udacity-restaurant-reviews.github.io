@@ -40,14 +40,17 @@ This is a diary of the steps I took to complete this project.
         I just have to press shift-refresh, and it's there. it's because of the browser cache. Other solution is start the server in incognito mode.
 
 3. I have to give the images an alt text, which I tried in main.js -> createRestaurantHTML () -> image.alt = "restaurant photo" which makes it appear in the html, but I am not sure it actually works, because it won't work on hover as usual. I managed to pass the custom na too! I did it in the map also!!!
+    The reviewer suggested that I give the images better custom alt descriptions, but that is much more complicated. I am guessing I would have to pass one to the json data. It was easier than I expected. I passed the data in json, then just called it in the restaurant object in main.js. Alain helped with that.
 
 4. I put a focus feature in the restaurant selection menu and the restaurant buttons. I decided to go with vivid colors.
     Done!
     
 5. Must fix focus for tab. I thing it must go from header to the filters. Tab-index maybe?
-I am still strying to skip the tabindex of the map, but tabindex="-1" doesn't do the trick...! I think the tab attribute can be removed with some code, but it looks like an overkill. Furthermore, the problem is that setting the tabindex manually 1:header, 2: dropdown menu....etc doesn't work either, 'cause the tab goes back to the maps (edited). Mohammed Riaad told me that G.M. can't be tempered with, so I won't be trying anymore. 
+I am still strying to skip the tabindex of the map, but tabindex="-1" doesn't do the trick...! I think the tab attribute can be removed with some code, but it looks like an overkill. Furthermore, the problem is that setting the tabindex manually 1:header, 2: dropdown menu....etc doesn't work either, 'cause the tab goes back to the maps (edited). Mohammed Riaad told me that G.M. can't be tempered with, so I won't be trying anymore. I decided to leave tabindex as is. After all it's not a good idea to mess with it.
 
 6. Must implement aria attributes. Note sure yet. I did some semantics.
+    Have to fix second page some stuff like the reviewer said.
+        Done, I think.
 
 7. Implement meta data for responsive UX
     Done!
@@ -55,7 +58,12 @@ I am still strying to skip the tabindex of the map, but tabindex="-1" doesn't do
 8. Implement Service Worker:   
         I found a solution online, I will try that. https://www.youtube.com/watch?v=BfL3pprhnms
         It works offline.
+            Nope it doesn't. Reviewer gave me a red light. I had a mistake in  my fetch code. I initiated the SW like in the google example (https://developers.google.com/web/fundamentals/primers/service-workers/), which had an extra event listener. I think it works better this way. The rest looks pretty similar
+
+9. Fix visual element for responsive UX.
+    As the reviewer pointed out, I need to fix some stuff.
+        Done!
 
 ## Acknowledgements
 
-For this project I want to thank the community for their support as always, special mentions to David Lower and Mohammed Riaad. A thank you to the girl on the You Tube "bitsofcode" video for a very good solution, which helped very much my understanding of Service Workers.
+For this project I want to thank the community for their support as always, special mentions to David Lower, Mohammed Riaad and Alain. A thank you to the girl on the You Tube "bitsofcode" video for a very good solution, which helped very much my understanding of Service Workers.
