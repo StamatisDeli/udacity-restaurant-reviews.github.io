@@ -121,14 +121,20 @@ nav h1 a {
     letter-spacing: 10px;
     text-transform: uppercase;
 }
-
-#breadcrumb {
-    padding: 10px 40px 16px;
-    list-style: none;
+#crumb-nav{
     background-color: #eee;
-    font-size: 17px;
-    margin: 0;
     width: 50%;
+    margin: 0;
+    padding: 10px 40px 16px;
+    height: 3rem;
+}
+#breadcrumb {
+    
+    list-style: none;
+    
+    font-size: 17px;
+    
+    
 }
 
 /* Display list items side by side */
@@ -408,7 +414,7 @@ table {
 
 @media screen and (max-width: 750px) {
     /*Restaurant Page*/
-    #breadcrumb {
+    #crumb-nav {
         width: 100%;
     }
     .inside #map-container {

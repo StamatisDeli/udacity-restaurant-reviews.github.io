@@ -57,16 +57,15 @@ self.addEventListener("activate", function(e){
 
 self.addEventListener("fetch", function(e){
     console.log("S-W: Fetching", e.request.url)
-    
     // Responds to the fetch event
     e.respondWith (
         //check in cache whether requested url already exists so we don't have to fetch again:
-        caches.match(e.request).then(function(response){
+        caches.match(e.request.url).then(function(response){
             if (response){ //if request already exists...
                 console.log("S-W: Already in cache", e.request.url);//...inform me
                 return response; //...and return the cached version
             }
-
+            
             //if it's not in the cache we have to fetch it:
             //but we have to clone the response so we can reuse it over and over
             let requestClone = e.request.clone();
