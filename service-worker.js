@@ -55,40 +55,43 @@ self.addEventListener("activate", function(e){
     )
 })
 
-self.addEventListener("fetch", function(e){
-    console.log("S-W: Fetching", e.request.url)
-    // Responds to the fetch event
-    e.respondWith (
-        //check in cache whether requested url already exists so we don't have to fetch again:
-        caches.match(e.request.url).then(function(response){
-            if (response){ //if request already exists...
-                console.log("S-W: Already in cache", e.request.url);//...inform me
-                return response; //...and return the cached version
-            }
-            
-            //if it's not in the cache we have to fetch it:
-            //but we have to clone the response so we can reuse it over and over
-            let requestClone = e.request.clone();
-
-            fetch(requestClone)
-                .then(function(response){
-                    //if there is no response...
-                    if(!response){
-                        console.log("S-W: No fetch response");
-                        return response;
-                    }
-                    // if there is a response
-                    let responseClone = response.clone();
-                    //open the cache again
-                    caches.open(cacheVersion).then(function(cache){
-                        cache.put(e.request, responseClone);
-                        return response;
-                    })
-
-                })
-                .catch(function(error){
-                    console.log("S-W: Error Fetching & Catching new Data", error);
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+      caches.match(event.request)
+        .then(function(response) {
+          // Cache hit - return response
+          if (response) {
+            return response;
+          }
+  
+          // IMPORTANT: Clone the request. A request is a stream and
+          // can only be consumed once. Since we are consuming this
+          // once by cache and once by the browser for fetch, we need
+          // to clone the response.
+          var fetchRequest = event.request.clone();
+  
+          return fetch(fetchRequest).then(
+            function(response) {
+              // Check if we received a valid response
+              if(!response || response.status !== 200 || response.type !== 'basic') {
+                return response;
+              }
+  
+              // IMPORTANT: Clone the response. A response is a stream
+              // and because we want the browser to consume the response
+              // as well as the cache consuming the response, we need
+              // to clone it so we have two streams.
+              var responseToCache = response.clone();
+  
+              caches.open(cacheFiles)
+                .then(function(cache) {
+                  cache.put(event.request, responseToCache);
                 });
-        }) // end caches.match(e.request)
-    ); //end respondWith
-})
+  
+              return response;
+            }
+          );
+        })
+      );
+  });
+  

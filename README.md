@@ -59,6 +59,7 @@ I am still strying to skip the tabindex of the map, but tabindex="-1" doesn't do
         I found a solution online, I will try that. https://www.youtube.com/watch?v=BfL3pprhnms
         It works offline.
             Nope it doesn't. Reviewer gave me a red light. I had a mistake in  my fetch code. I initiated the SW like in the google example (https://developers.google.com/web/fundamentals/primers/service-workers/), which had an extra event listener. I think it works better this way. The rest looks pretty similar
+                I am still experiencing problems, because my reviewers can't get the pages to reload, but I can. I am changing the fetch code with the one in https://developers.google.com/web/fundamentals/primers/service-workers/.
 
 9. Fix visual element for responsive UX.
     As the reviewer pointed out, I need to fix some stuff.
