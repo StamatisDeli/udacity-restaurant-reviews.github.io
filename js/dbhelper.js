@@ -8,7 +8,8 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    //const port = 8000 // Change this to your server port // TODO: Set to 80 so that it works in github
+    //for local use
+    //const port = 8000 
     //return `http://localhost:${port}/data/restaurants.json`;
     return 'https://stamatisdeli.github.io/udacity-restaurant-reviews.github.io/data/restaurants.json'
   }
@@ -151,6 +152,8 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
+    // for local use:
+    // return (`/img/${restaurant.photograph}`)
     return (`https://stamatisdeli.github.io/udacity-restaurant-reviews.github.io/img/${restaurant.photograph}`);
   }
 
