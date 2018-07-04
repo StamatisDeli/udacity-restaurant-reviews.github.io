@@ -151,7 +151,7 @@ class DBHelper {
    * Restaurant image URL.
    */
   static imageUrlForRestaurant(restaurant) {
-    return (`/udacity-restaurant-reviews.github.io/img/${restaurant.photograph}`);
+    return (`https://stamatisdeli.github.io/udacity-restaurant-reviews.github.io/img/${restaurant.photograph}`);
   }
 
   /**
